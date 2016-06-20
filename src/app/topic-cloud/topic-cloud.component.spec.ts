@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { TagCloudComponent } from './tag-cloud.component';
+import { TopicCloudComponent } from './topic-cloud.component';
 
-describe('Component: TagCloud', () => {
+describe('Component: TopicCloud', () => {
   it('should create an instance', () => {
-    // let component = new TagCloudComponent();
+    // let component = new TopicCloudComponent();
     // expect(component).toBeTruthy();
   });
 });

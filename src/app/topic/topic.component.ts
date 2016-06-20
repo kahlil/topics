@@ -1,14 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CLICK_TAG } from '../action/action-constants';
+import { CLICK_TOPIC } from '../action/action-constants';
 import { OddStreamService } from '../oddstream.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-tag',
-  templateUrl: 'tag.component.html',
-  styleUrls: ['tag.component.css'],
+  selector: 'app-topic',
+  templateUrl: 'topic.component.html',
+  styleUrls: ['topic.component.css'],
 })
-export class TagComponent {
+export class TopicComponent {
   @Input() label: string;
   @Input() size: number;
   @Input() color: number;
@@ -18,7 +18,7 @@ export class TagComponent {
   constructor(private oddstream: OddStreamService) {}
 
   topicClick() {
-    this.oddstream.dispatch(this.topicClick$, CLICK_TAG);
+    this.oddstream.dispatch(this.topicClick$, CLICK_TOPIC);
     this.topicClick$.emit(this.topicId);
   }
 }

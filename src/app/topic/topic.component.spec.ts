@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { TagDataComponent } from './tag-data.component';
+import { TopicComponent } from './topic.component';
 
-describe('Component: TagData', () => {
+describe('Component: Topic', () => {
   it('should create an instance', () => {
-    // let component = new TagDataComponent();
+    // let component = new TopicComponent();
     // expect(component).toBeTruthy();
   });
 });

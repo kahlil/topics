@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let topic of topics | async">
+    <app-topic
+      label="{{topic?.label}}"
+      size="{{topic?.size}}"
+      color="{{topic?.color}}"
+      topicId="{{topic?.id}}">
+    </app-topic>
+  </li>
+</ul>

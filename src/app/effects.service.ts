@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { OddStreamService } from './oddstream.service';
-import { GET_TAGS } from './action/action-constants';
+import { GET_TOPICS } from './action/action-constants';
 
 @Injectable()
 export class EffectsService {
@@ -18,7 +18,7 @@ export class EffectsService {
     this.dispatcher$
       .subscribe(action => {
         switch (action.type) {
-          case GET_TAGS:
+          case GET_TOPICS:
             this.getData.getTopics();
             break;
           default:

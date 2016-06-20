@@ -1,4 +1,4 @@
-export class TagsPage {
+export class TopicsPage {
   navigateTo() {
     return browser.get('/');
   }

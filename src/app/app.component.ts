@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { TagCloudComponent } from './tag-cloud';
-import { TagDataComponent } from './tag-data';
+import { TopicCloudComponent } from './topic-cloud';
+import { TopicDataComponent } from './topic-data';
 import { DataService } from './data.service';
 import { OddStreamService } from './oddstream.service';
 import { EffectsService } from './effects.service';
@@ -21,8 +21,8 @@ import { actionCreators } from './action/action-creators';
     UtilService,
   ],
   directives: [
-    TagDataComponent,
-    TagCloudComponent,
+    TopicDataComponent,
+    TopicCloudComponent,
   ],
   encapsulation: ViewEncapsulation.None
 })

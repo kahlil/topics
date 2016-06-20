@@ -1,3 +1,3 @@
-export const GET_TAGS = 'GET_TAGS';
-export const RECEIVE_TAGS = 'RECEIVE_TAGS';
-export const CLICK_TAG = 'CLICK_TAG';
+export const GET_TOPICS = 'GET_TOPICS';
+export const RECEIVE_TOPICS = 'RECEIVE_TOPICS';
+export const CLICK_TOPIC = 'CLICK_TOPIC';

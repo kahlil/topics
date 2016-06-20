@@ -1,37 +1,29 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { OddStreamService } from './oddstream.service';
-import { tagCloudReducers } from './reducers/tag-cloud-reducers';
-import { tagDataReducers } from './reducers/tag-data-reducers';
+import { topicCloudReducers } from './reducers/topic-cloud-reducers';
+import { topicDataReducers } from './reducers/topic-data-reducers';
 import { UtilService } from './util.service';
 
 @Injectable()
-export class StoreService implements OnInit {
-  tagCloudState$: Observable<any>;
-  tagDataState$: Observable<any>;
+export class StoreService {
+  topicCloudState$: Observable<any>;
+  topicDataState$: Observable<any>;
   maxPopularity: number;
 
   constructor(
     private oddstream: OddStreamService,
     private util: UtilService
   ) {
-    this.tagCloudState$ = this.oddstream.makeStateStream(tagCloudReducers)
+    this.topicCloudState$ = this.oddstream.makeStateStream(topicCloudReducers)
       .map(topics => this.processData(topics))
       .publishReplay(1).refCount();
-    this.tagDataState$ = Observable.combineLatest(
-      this.tagCloudState$,
-      this.oddstream.makeStateStream(tagDataReducers),
-      (topics, topicId) => topics.find(topic => topic.id === topicId));
-  }
 
-  ngOnInit() {
-    // this.tagCloudState$ = this.oddstream.makeStateStream(tagCloudReducers)
-    //   .map(topics => this.processData(topics))
-    //   .publishReplay(1).refCount();
-    // this.tagDataState$ = Observable.combineLatest(
-    //   this.tagCloudState$,
-    //   this.oddstream.makeStateStream(tagDataReducers),
-    //   (topics, topicId) => topics.find(topic => topic.id === topicId));
+    this.topicDataState$ = Observable.combineLatest(
+      this.topicCloudState$,
+      this.oddstream.makeStateStream(topicDataReducers),
+      (topics, topicId) => topics.find(topic => topic.id === topicId))
+      .publishReplay(1).refCount();
   }
 
   processData(topics) {

@@ -1,10 +1,10 @@
-import { TagsPage } from './app.po';
+import { TopicsPage } from './app.po';
 
-describe('tags App', function() {
-  let page: TagsPage;
+describe('topics App', function() {
+  let page: TopicsPage;
 
   beforeEach(() => {
-    page = new TagsPage();
+    page = new TopicsPage();
   });
 
   it('should display message saying app works', () => {

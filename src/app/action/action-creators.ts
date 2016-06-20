@@ -1,11 +1,11 @@
 import {
-  GET_TAGS,
-  RECEIVE_TAGS,
-  CLICK_TAG
+  GET_TOPICS,
+  RECEIVE_TOPICS,
+  CLICK_TOPIC
 } from './action-constants';
 
 export const actionCreators = {
-  getTags: () => ({ type: GET_TAGS }),
-  receiveTags: data => ({ type: RECEIVE_TAGS, data }),
-  clickTag: data => ({ type: CLICK_TAG, data }),
+  getTopics: () => ({ type: GET_TOPICS }),
+  receiveTopics: data => ({ type: RECEIVE_TOPICS, data }),
+  clickTopic: data => ({ type: CLICK_TOPIC, data }),
 };
