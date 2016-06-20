@@ -7,17 +7,24 @@ import {
   async, inject
 } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { OddStreamService } from './oddstream.service';
+import { EffectsService } from './effects.service';
+import { DataService } from './data.service';
 
-beforeEachProviders(() => [AppComponent]);
+beforeEachProviders(() => [AppComponent, OddStreamService, EffectsService, DataService]);
 
 describe('App: Topics', () => {
   it('should create the app',
-      inject([AppComponent], (app: AppComponent) => {
-    expect(app).toBeTruthy();
-  }));
+      inject([AppComponent, OddStreamService, EffectsService],
+      (app: AppComponent, oddstream: OddStreamService, effects: EffectsService) => {
+        expect(app).toBeTruthy();
+      }
+    )
+  );
 
-  it('should have as title \'app works!\'',
-      inject([AppComponent], (app: AppComponent) => {
-    expect(app.title).toEqual('app works!');
+  it('should have as title \'Topics!\'',
+      inject([AppComponent, OddStreamService, EffectsService],
+      (app: AppComponent, oddstream: OddStreamService, effects: EffectsService) => {
+    expect(app.title).toEqual('Topics');
   }));
 });

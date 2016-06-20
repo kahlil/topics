@@ -3,18 +3,13 @@ import { Observable } from 'rxjs/Observable';
 import { OddStreamService } from './oddstream.service';
 import { topicCloudReducers } from './reducers/topic-cloud-reducers';
 import { topicDataReducers } from './reducers/topic-data-reducers';
-import { UtilService } from './util.service';
 
 @Injectable()
 export class StoreService {
   topicCloudState$: Observable<any>;
   topicDataState$: Observable<any>;
-  maxPopularity: number;
 
-  constructor(
-    private oddstream: OddStreamService,
-    private util: UtilService
-  ) {
+  constructor(private oddstream: OddStreamService) {
     // Make the state stream
     this.topicCloudState$ = this.oddstream.makeStateStream(topicCloudReducers);
 

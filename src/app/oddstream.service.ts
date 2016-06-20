@@ -5,9 +5,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { Action } from './action/action';
 import { curry, camelCase } from 'lodash';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-
 @Injectable()
 export class OddStreamService {
   public dispatcher$: any;

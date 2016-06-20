@@ -7,12 +7,14 @@ import {
   async, inject
 } from '@angular/core/testing';
 import { DataService } from './data.service';
+import { OddStreamService } from './oddstream.service';
 
 describe('GetData Service', () => {
-  beforeEachProviders(() => [DataService]);
+  beforeEachProviders(() => [DataService, OddStreamService]);
 
-  it('should ...',
-      inject([DataService], (service: DataService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should ...', inject([DataService],
+    (service: DataService, oddstream: OddStreamService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

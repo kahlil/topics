@@ -1,11 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { TopicCloudComponent } from './topic-cloud';
 import { TopicDataComponent } from './topic-data';
 import { DataService } from './data.service';
 import { OddStreamService } from './oddstream.service';
 import { EffectsService } from './effects.service';
 import { StoreService } from './store.service';
-import { UtilService } from './util.service';
 import { actionCreators } from './action/action-creators';
 
 @Component({
@@ -18,7 +17,6 @@ import { actionCreators } from './action/action-creators';
     OddStreamService,
     EffectsService,
     StoreService,
-    UtilService,
   ],
   directives: [
     TopicDataComponent,
@@ -26,15 +24,17 @@ import { actionCreators } from './action/action-creators';
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Topics';
   constructor(
-    oddstream: OddStreamService,
-    effects: EffectsService
-  ) {
+    private oddstream: OddStreamService,
+    private effects: EffectsService
+  ) {}
+
+  ngOnInit() {
     // Feed oddstream with the action creators.
-    oddstream.setActionCreators(actionCreators);
+    this.oddstream.setActionCreators(actionCreators);
     // Make sure side effects are run when necessary.
-    effects.runEffects();
+    this.effects.runEffects();
   }
 }

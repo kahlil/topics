@@ -36,7 +36,9 @@
     "app/index.ts",
     "app/oddstream.service.spec.ts",
     "app/oddstream.service.ts",
+    "app/reducers/topic-cloud-reducers.spec.ts",
     "app/reducers/topic-cloud-reducers.ts",
+    "app/reducers/topic-data-reducers.spec.ts",
     "app/reducers/topic-data-reducers.ts",
     "app/shared/index.ts",
     "app/store.service.spec.ts",
@@ -51,8 +53,7 @@
     "app/topic/topic.component.spec.ts",
     "app/topic/topic.component.ts",
     "app/topics.ts",
-    "app/util.service.spec.ts",
-    "app/util.service.ts",
+    "app/util.spec.ts",
     "app/util.ts"
   ],
   "atom": {
