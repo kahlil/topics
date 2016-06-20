@@ -1,6 +1,6 @@
 # Topics
 
-This solution to the topics challenge is made with Angular 2.
+An overview of topics with detail view made with Angular 2.
 It is written in TypeScript and uses a unidirectional dataflow
 architecture with RxJS Observables with a library I wrote called
 [oddstream (still wip)](https://github.com/kahlil/oddstream).
