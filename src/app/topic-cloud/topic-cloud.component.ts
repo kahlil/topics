@@ -26,7 +26,11 @@ export class TopicCloudComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // Initialize the application by triggering an action
+    // to get the topics data.
     this.oddstream.dispatch(Observable.of('GET_TOPICS'), GET_TOPICS);
+    // Subscribe to the topicCloudState stream and pass
+    // the data to the component.
     this.topics = this.store.topicCloudState$;
   }
 }

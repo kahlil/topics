@@ -11,9 +11,11 @@ export class OddStreamService {
   private actionCreators: any;
 
   constructor() {
+    // Use an RxJS Subject as the dispatcher.
     this.dispatcher$ = new Subject();
   }
 
+  // Dispatch an action.
   dispatch(action$: Observable<any>, actionType: string): Subscription {
     const actionCreator$ = this.mapToActionCreator(action$, actionType);
     const nextFn = (data: any) => this.dispatcher$.next(data);
@@ -21,6 +23,7 @@ export class OddStreamService {
     return actionCreator$.subscribe(nextFn, errorFn);
   }
 
+  // Create a statestream with a set of reducers.
   makeStateStream(reducers: any, initialState: any = []) {
     const getReducer = (actionType: string) => reducers[camelCase(actionType)];
     const mapReducer = (action: Action) => curry(getReducer(action.type))(action);
@@ -31,6 +34,7 @@ export class OddStreamService {
       .publishReplay(1).refCount();
   }
 
+  // Map an action creator to an action with the same name.
   mapToActionCreator(stream: Observable<any>, actionType: string) {
     const actionCreator = this.actionCreators[camelCase(actionType)];
     if (!!actionCreator === false) {
@@ -39,10 +43,12 @@ export class OddStreamService {
     return stream.map(actionCreator);
   }
 
+  // Set the action creators for app.
   setActionCreators(actionCreators: {}) {
     this.actionCreators = actionCreators;
   }
 
+  // Expose the dispatcher if needed.
   getDispatcher$() {
     return this.dispatcher$;
   }

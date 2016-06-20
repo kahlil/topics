@@ -24,6 +24,7 @@
     "system-config.ts",
     "typings.d.ts",
     "app/action/action-constants.ts",
+    "app/action/action-creators.spec.ts",
     "app/action/action-creators.ts",
     "app/action/action.ts",
     "app/app.component.spec.ts",

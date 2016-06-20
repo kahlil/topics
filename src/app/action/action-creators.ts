@@ -4,6 +4,7 @@ import {
   CLICK_TOPIC
 } from './action-constants';
 
+// All action creator functions for this application.
 export const actionCreators = {
   getTopics: () => ({ type: GET_TOPICS }),
   receiveTopics: data => ({ type: RECEIVE_TOPICS, data }),

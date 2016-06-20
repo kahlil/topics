@@ -15,6 +15,8 @@ export class TopicDataComponent implements OnInit {
   constructor(private store: StoreService) {}
 
   ngOnInit() {
+    // Subscribe to the topicDataState stream and pass the state
+    // to the component.
     this.store.topicDataState$.subscribe(data => this.topicData = data);
   }
 }

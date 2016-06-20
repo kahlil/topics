@@ -18,7 +18,10 @@ export class TopicComponent {
   constructor(private oddstream: OddStreamService) {}
 
   topicClick() {
+    // Trigger actions from user interactions.
     this.oddstream.dispatch(this.topicClick$, CLICK_TOPIC);
+    // topicClick$ is an Observable stream which gets
+    // triggered synchronously via the emit function.
     this.topicClick$.emit(this.topicId);
   }
 }
