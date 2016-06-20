@@ -1,6 +1,3 @@
 export const tagCloudReducers = {
-  receiveTags: (action, state) => {
-    console.log(action);
-    return action.data;
-  }
+  receiveTags: (action, state) => action.data,
 };

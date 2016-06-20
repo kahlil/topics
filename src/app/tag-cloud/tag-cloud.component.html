@@ -1,9 +1,10 @@
 <ul>
-  <li *ngFor="let tag of tags">
+  <li *ngFor="let tag of tags | async">
     <app-tag
-      label="{{tag.label}}"
-      size="{{tag.size}}"
-      color="{{tag.color}}">  
+      label="{{tag?.label}}"
+      size="{{tag?.size}}"
+      color="{{tag?.color}}"
+      topicId="{{tag?.id}}">
     </app-tag>
   </li>
 </ul>

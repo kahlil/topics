@@ -1,6 +1,7 @@
 :host {
   width: 50%;
   display: block;
+  float: left;
 }
 
 ul {
@@ -9,6 +10,7 @@ ul {
 }
 
 li {
+  cursor: pointer;
   display: inline-block;
   padding: 5px 10px;
   margin: 0;

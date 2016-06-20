@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import { TagComponent } from '../tag';
@@ -15,6 +15,7 @@ import { GET_TAGS } from '../action/action-constants';
     TagComponent,
     NgFor,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TagCloudComponent implements OnInit {
   private tags: any;
@@ -26,6 +27,6 @@ export class TagCloudComponent implements OnInit {
 
   ngOnInit() {
     this.oddstream.dispatch(Observable.of('GET_TAGS'), GET_TAGS);
-    this.store.tagCloudState$.subscribe(tags => this.tags = tags);
+    this.tags = this.store.tagCloudState$;
   }
 }

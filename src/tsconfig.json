@@ -50,7 +50,9 @@
     "app/tag/index.ts",
     "app/tag/tag.component.spec.ts",
     "app/tag/tag.component.ts",
-    "app/topics.ts"
+    "app/topics.ts",
+    "app/util.service.spec.ts",
+    "app/util.service.ts"
   ],
   "atom": {
     "rewriteTsconfig": true

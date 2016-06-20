@@ -1,3 +1,3 @@
 export const tagDataReducers = {
-  // openEditor: (action, state) => ({ isEnabled: true }),
+  clickTag: (action, state) => action.data,
 };

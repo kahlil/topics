@@ -14,7 +14,7 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/publishReplay';
-import 'rxjs/add/operator/combineLatest';
+import 'rxjs/add/observable/combineLatest';
 // Rx observable methods
 import 'rxjs/add/observable/empty';
 import 'rxjs/add/observable/never';

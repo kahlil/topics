@@ -1,3 +1,5 @@
-<p>
-  tag-data works!
-</p>
+<h1>Information on topic <em>{{topicData?.label}}</em></h1>
+<p>Total mentions: {{topicData?.volume}}</p>
+<p>Positive mentions: {{topicData?.sentiment?.positive}}</p>
+<p>Neutral mentions: {{topicData?.sentiment?.neutral}}</p>
+<p>Negative mentions: {{topicData?.sentiment?.negative}}</p>

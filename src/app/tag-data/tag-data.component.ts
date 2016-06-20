@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../store.service';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['tag-data.component.css']
 })
 export class TagDataComponent implements OnInit {
+  topicData: any;
 
-  constructor() {}
+  constructor(private store: StoreService) {}
 
   ngOnInit() {
+    this.store.tagDataState$.subscribe(data => this.topicData = data);
   }
-
 }
