@@ -15,9 +15,44 @@
     "target": "es5",
     "inlineSources": true
   },
-
+  "filesGlob": [
+    "*.ts",
+    "**/*.ts"
+  ],
   "files": [
     "main.ts",
-    "typings.d.ts"
-  ]
+    "system-config.ts",
+    "typings.d.ts",
+    "app/action/action-constants.ts",
+    "app/action/action-creators.ts",
+    "app/action/action.ts",
+    "app/app.component.spec.ts",
+    "app/app.component.ts",
+    "app/data.service.spec.ts",
+    "app/data.service.ts",
+    "app/effects.service.spec.ts",
+    "app/effects.service.ts",
+    "app/environment.ts",
+    "app/index.ts",
+    "app/oddstream.service.spec.ts",
+    "app/oddstream.service.ts",
+    "app/reducers/tag-cloud-reducers.ts",
+    "app/reducers/tag-data-reducers.ts",
+    "app/shared/index.ts",
+    "app/store.service.spec.ts",
+    "app/store.service.ts",
+    "app/tag-cloud/index.ts",
+    "app/tag-cloud/tag-cloud.component.spec.ts",
+    "app/tag-cloud/tag-cloud.component.ts",
+    "app/tag-data/index.ts",
+    "app/tag-data/tag-data.component.spec.ts",
+    "app/tag-data/tag-data.component.ts",
+    "app/tag/index.ts",
+    "app/tag/tag.component.spec.ts",
+    "app/tag/tag.component.ts",
+    "app/topics.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
