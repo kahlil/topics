@@ -15,23 +15,16 @@ export class StoreService {
     private oddstream: OddStreamService,
     private util: UtilService
   ) {
-    this.topicCloudState$ = this.oddstream.makeStateStream(topicCloudReducers)
-      .map(topics => this.processData(topics))
-      .publishReplay(1).refCount();
+    // Make the state stream
+    this.topicCloudState$ = this.oddstream.makeStateStream(topicCloudReducers);
 
+    // For the topic data we take the id data from the
+    // click action and use combineLatest to retrieve the topic
+    // data from the the topicCloudState stream.
     this.topicDataState$ = Observable.combineLatest(
       this.topicCloudState$,
       this.oddstream.makeStateStream(topicDataReducers),
       (topics, topicId) => topics.find(topic => topic.id === topicId))
       .publishReplay(1).refCount();
-  }
-
-  processData(topics) {
-    this.maxPopularity = this.util.getMaxPopularity(topics);
-    return topics.map(topic => {
-      const size = this.util.getSize(topic.sentimentScore, this.maxPopularity);
-      const color = this.util.getColor(topic.sentimentScore);
-      return Object.assign({ size, color }, topic);
-    });
   }
 }

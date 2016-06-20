@@ -32,7 +32,9 @@ export class AppComponent {
     oddstream: OddStreamService,
     effects: EffectsService
   ) {
+    // Feed oddstream with the action creators.
     oddstream.setActionCreators(actionCreators);
+    // Make sure side effects are run when necessary.
     effects.runEffects();
   }
 }

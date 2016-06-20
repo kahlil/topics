@@ -14,6 +14,9 @@ export class EffectsService {
     this.dispatcher$ = oddstream.getDispatcher$();
   }
 
+  // In this application
+  // the only side effect is
+  // when we get the topics data.
   runEffects() {
     this.dispatcher$
       .subscribe(action => {

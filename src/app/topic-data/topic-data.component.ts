@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { StoreService } from '../store.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-topic-data',
   templateUrl: 'topic-data.component.html',
-  styleUrls: ['topic-data.component.css']
+  styleUrls: ['topic-data.component.css'],
+  directives: [NgIf],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopicDataComponent implements OnInit {
   topicData: any;

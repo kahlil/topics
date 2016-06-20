@@ -9,6 +9,10 @@ import { RECEIVE_TOPICS } from './action/action-constants';
 export class DataService {
   constructor(private oddstream: OddStreamService) {}
 
+  // This function returns the data
+  // array asynchronously.
+  // The data is inserted into the unidirectional
+  // dataflow cycle via an oddstream dispatch. 
   getTopics() {
     // Make async. Normally we would get
     // the data from the server.
