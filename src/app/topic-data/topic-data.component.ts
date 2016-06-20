@@ -7,8 +7,7 @@ import { StoreService } from '../store.service';
   selector: 'app-topic-data',
   templateUrl: 'topic-data.component.html',
   styleUrls: ['topic-data.component.css'],
-  directives: [NgIf],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  directives: [NgIf]
 })
 export class TopicDataComponent implements OnInit {
   topicData: any;
