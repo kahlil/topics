@@ -1,5 +1,7 @@
 # Topics
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kahlil/topics.svg)](https://greenkeeper.io/)
+
 An overview of topics with detail view made with Angular 2.
 It is written in TypeScript and uses a unidirectional dataflow
 architecture with RxJS Observables with a library I wrote called
